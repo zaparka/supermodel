@@ -3,10 +3,10 @@ module SuperModel
     module ClassMethods
       def self.extended(base)
         base.class_eval do
-          class_inheritable_array :indexed_attributes
+          class_attribute :indexed_attributes
           self.indexed_attributes = []
-                    
-          class_inheritable_hash :redis_options
+
+          class_attribute :redis_options
           self.redis_options = {}
         end
       end
